@@ -1,17 +1,17 @@
 import React from 'react'
 import {INCREMENT, DECREMENT} from '../reducers/counter'
 
-export const Counter = ({store}) => {
+export const Counter = ({state, dispatch}) => {
     return (
         <div>
-            <span>{store.getState()}</span>
+            <span>{state}</span>
             <button onClick={() => {
-                store.dispatch({
+                dispatch({
                     type: INCREMENT
                 })
             }}>+</button>
             <button onClick={() => {
-                store.dispatch({
+                dispatch({
                     type: DECREMENT
                 })
             }}>-</button>

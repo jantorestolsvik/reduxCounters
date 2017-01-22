@@ -1,10 +1,10 @@
 import React from 'react';
-import Counter from './counter';
+import Counter from '../containers/counter';
 
-export const App = ({store}) => {
+export const App = () => {
     return (
         <div>
-            <Counter store={store} />
+            <Counter />
         </div>
     )
 };
