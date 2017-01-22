@@ -6,12 +6,19 @@ import {hideFilter} from './reducers/hideFilter';
 import {createStore}  from 'redux';
 import {Provider} from 'react-redux';
 
-let store = createStore((state = {}, action) => {
-    return {
-        counters: counters(state.counters, action),
-        hideFilter: hideFilter(state.hideFilter, action)
-    }
-});
+let combineReducers = (reducers) => (state = {}, action) => {
+    return Object.keys(reducers).reduce((newState, key) => {
+            newState[key] = reducers[key](state[key], action);
+            return newState;
+        }
+        , {})
+};
+
+let store = createStore(combineReducers({
+    counters,
+    hideFilter
+}));
+
 
 render(
     <Provider store={store}>
