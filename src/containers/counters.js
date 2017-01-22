@@ -4,7 +4,8 @@ import {addCounter} from '../actions/counter';
 
 let mapStateToProps = (state) => {
     return {
-        counters: state
+        counters: state.counters,
+        hideNumber: state.hideFilter
     }
 };
 
