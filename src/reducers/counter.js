@@ -1,5 +1,4 @@
-export const INCREMENT = "INCREMENT";
-export const DECREMENT = "DECREMENT";
+import {DECREMENT, INCREMENT} from '../actions/counter';
 
 export const counter = (state = 0, action) => {
     if (action.type === INCREMENT) {

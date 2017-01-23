@@ -1,20 +1,11 @@
 import React from 'react'
-import {INCREMENT, DECREMENT} from '../reducers/counter'
 
-export const Counter = ({state, dispatch}) => {
+export const Counter = ({state, increment, decrement}) => {
     return (
         <div>
             <span>{state}</span>
-            <button onClick={() => {
-                dispatch({
-                    type: INCREMENT
-                })
-            }}>+</button>
-            <button onClick={() => {
-                dispatch({
-                    type: DECREMENT
-                })
-            }}>-</button>
+            <button onClick={increment}>+</button>
+            <button onClick={decrement}>-</button>
         </div>
     )
 };
