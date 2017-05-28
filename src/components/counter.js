@@ -1,13 +1,29 @@
-import React from 'react'
+import React, {Component} from 'react'
 
-export const Counter = () => {
-    return (
-        <div>
-            <span>0</span>
-            <button onClick={() => {}}>+</button>
-            <button onClick={() => {}}>-</button>
-        </div>
-    )
-};
+export class Counter extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            counter: 0
+        }
+    }
+
+    render() {
+        return (
+            <div>
+                <span>{this.state.counter}</span>
+                <button onClick={() => {
+                this.setState({counter: this.state.counter + 1})
+                }}>+
+                </button>
+                <button onClick={() => {
+                this.setState({counter: this.state.counter - 1})
+                }}>-
+                </button>
+            </div>
+        )
+    }
+}
 
 export default Counter;
